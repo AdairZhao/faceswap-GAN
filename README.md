@@ -28,7 +28,16 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
   1. Load trained model.
   2. Detect faces in an image using dlib's cnn model. 
   3. Use GAN to transform detected face into target face. 
-  4. Use moviepy module to output a video clip with swapped face.    
+  4. Use moviepy module to output a video clip with swapped face. 
+  
+* [faceswap_GAN_keras.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_GAN_keras.ipynb) and [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
+  - These are notebooks that contain classes of GAN mdoel, using LSGAN and improved WGAN respectively. 
+  - Perceptual loss is discarded for simplicity. 
+  - The improved WGAN model gave me similar result with LAGAN model after tantamount (~18k) generator updates.
+  ```python
+  gan = FaceSwapGAN() # instantiate the class
+  gan.train(max_iters=2e4, save_interval=500) # start training
+  ```
   
 ### Others
 * [dlib_video_face_detection.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/dlib_video_face_detection.ipynb)
@@ -103,4 +112,4 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
 5. Mixup technique ([arXiv](https://arxiv.org/abs/1710.09412)) and least squares loss function are adopted ([arXiv](https://arxiv.org/abs/1712.06391)) for training GAN. However, I did not do any ablation experiment on them. Don't know how much impact they had on outputs.
 
 ## Acknowledgments
-Code borrows from [tjwei](https://github.com/tjwei/GANotebooks) and [deepfakes](https://pastebin.com/hYaLNg1T). The generative network is adopted from [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
+Code borrows from [tjwei](https://github.com/tjwei/GANotebooks), [eriklindernoren](https://github.com/eriklindernoren/Keras-GAN/blob/master/aae/adversarial_autoencoder.py), [fchollet](https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/8.5-introduction-to-gans.ipynb), [keras-contrib](https://github.com/keras-team/keras-contrib/blob/master/examples/improved_wgan.py) and [deepfakes](https://pastebin.com/hYaLNg1T). The generative network is adopted from [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
