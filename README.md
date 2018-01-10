@@ -33,7 +33,7 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
 * [faceswap_GAN_keras.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_GAN_keras.ipynb) and [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
   - These are notebooks that contain classes of GAN mdoel, using LSGAN and improved WGAN respectively. 
   - Perceptual loss is discarded for simplicity. 
-  - The improved WGAN model gave me similar result with LAGAN model after tantamount (~18k) generator updates.
+  - The improved WGAN model gave me similar result with LSGAN model after tantamount (~18k) generator updates.
   ```python
   gan = FaceSwapGAN() # instantiate the class
   gan.train(max_iters=2e4, save_interval=500) # start training
