@@ -50,13 +50,13 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
 
 In below are results that show trained models transforming Hinako Sano ([佐野ひなこ](https://ja.wikipedia.org/wiki/%E4%BD%90%E9%87%8E%E3%81%B2%E3%81%AA%E3%81%93), left) to Emi Takei ([武井咲](https://ja.wikipedia.org/wiki/%E6%AD%A6%E4%BA%95%E5%92%B2), right).  
 ###### Source video: [佐野ひなことすごくどうでもいい話？(遊戯王)](https://www.youtube.com/watch?v=tzlD1CQvkwU)
-### 1. Autorecoder
+### 1. Autorecoder baseline
 
 Autoencoder based on deepfakes' script. It should be mentoined that the result of autoencoder (AE) can be much better if we trained it for longer.
 
 ![AE_results](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/AE_results.png)
 
-### 2. [Generative Adversarial Network](https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/), GAN (version 1)
+### 2. Generative Adversarial Network, GAN (version 1)
 
 **Improved output resolution:** Adversarial loss improves resolution of generated images. In addition, when perceptual loss is apllied, the movemnet of eyeballs becomes more realistic and consistent with input face.
 
@@ -74,7 +74,7 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   - C. Swapped face, using smoothing mask and face alignment.
   - D. Swapped face, using smoothing mask and smoothed bounding box.
 
-### 3. [Generative Adversarial Network](https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/), GAN (version 2)
+### 3. Generative Adversarial Network, GAN (version 2)
 
 **Version 1 features:** Most of features in version 1 are inherited, including perceptual loss and smoothed bbox.
 
