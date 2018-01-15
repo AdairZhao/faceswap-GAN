@@ -30,13 +30,13 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
   3. Use GAN to transform detected face into target face. 
   4. Use moviepy module to output a video clip with swapped face. 
   
-* [faceswap_GAN_keras.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_GAN_keras.ipynb) and [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
-  - These are notebooks that contain classes of GAN mdoel, using LSGAN and improved WGAN respectively. 
+* [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
+  - notebooks that contains class of GAN mdoel using [WGAN-GP](https://arxiv.org/abs/1704.00028). 
   - Perceptual loss is discarded for simplicity. 
-  - The improved WGAN model gave me similar result with LSGAN model after tantamount (~18k) generator updates.
+  - The WGAN-GP model gave me similar result with LSGAN model after tantamount (~18k) generator updates.
   ```python
   gan = FaceSwapGAN() # instantiate the class
-  gan.train(max_iters=2e4, save_interval=500) # start training
+  gan.train(max_iters=10e4, save_interval=500) # start training
   ```
   
 ### Others
