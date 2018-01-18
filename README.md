@@ -31,13 +31,19 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
   4. Use moviepy module to output a video clip with swapped face. 
   
 * [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
-  - notebooks that contains class of GAN mdoel using [WGAN-GP](https://arxiv.org/abs/1704.00028). 
+  - This notebook contains a class of GAN mdoel using [WGAN-GP](https://arxiv.org/abs/1704.00028). 
   - Perceptual loss is discarded for simplicity. 
   - The WGAN-GP model gave me similar result with LSGAN model after tantamount (~18k) generator updates.
   ```python
   gan = FaceSwapGAN() # instantiate the class
   gan.train(max_iters=10e4, save_interval=500) # start training
   ```
+* [FaceSwap_GAN_v2_sz128_train.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2_sz128_train.ipynb)
+  - Input and output images have shape `(128, 128, 3)`.
+  - Minor updates on the architectures: 
+    1. Add instance normalization to generators and discriminators.
+    2. Add additional regressoin loss (mae loss) on 64x64 branch output.
+  - Not compatible with `_test_video` and `_test_img` notebooks above.
   
 ### Others
 * [dlib_video_face_detection.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/dlib_video_face_detection.ipynb)
@@ -93,6 +99,8 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   - Left: Source face.
   - Middle: Swapped face, after masking.
   - Right: Mask heatmap & face bounding box.
+  
+**Optoinal 128x128 input/outptu size**
 
 ## Requirements
 
