@@ -100,7 +100,10 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   - Middle: Swapped face, after masking.
   - Right: Mask heatmap & face bounding box.
   
-**Optoinal 128x128 input/outptu size**
+**Optional 128x128 input/outptu resolution**: Increase input and output size to 128x128.
+
+### WIP: VGGFace as encoder
+Finetune the VGGFace ResNet (ResNet150?) as encoder.
 
 ## Requirements
 
