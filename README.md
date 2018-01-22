@@ -120,16 +120,16 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
 5. **Mixup** technique ([arXiv](https://arxiv.org/abs/1710.09412)) and **least squares loss** function are adopted ([arXiv](https://arxiv.org/abs/1712.06391)) for training GAN. However, I did not do any ablation experiment on them. Don't know how much impact they had on outputs.
 6. **Adding face landmarks** as the fourth input channel during training (w/ dropout_chance=0.3) force the model to learn(overfit) these face features. However it didn't give me decernible improvement. The following gif is the result clip, it should be mentoined that the landmarks information was not provided during video making, but the model was still able to prodcue accurate landmarks because similar [face, landmarks] pairs are already shown to the model during training.
 
-![landamrks_gif](https://github.com/shaoanlu/faceswap-GAN/raw/master/gifs/sh_test_clipped4_lms_comb.gif)
+  - ![landamrks_gif](https://github.com/shaoanlu/faceswap-GAN/raw/master/gifs/sh_test_clipped4_lms_comb.gif)
 
 7. **Recursive loop:** Feed model's output image back as its input, **repeat N times**.
   - Idea: Since our model is able to transform source face into target face, if we feed generated fake target face as its input, will the model refine the fake face to be more like a real target face?
   - **Version 1 result** (left to right: source, No recursion, N=2, N=10, N=50)
     - ![v1_recur](https://github.com/shaoanlu/faceswap-GAN/raw/master/gifs/v1_comb.gif)
-    - The model seems to refine the fake face (t obe moer similar with target face), but its shape and color go awry. Furthermore, in certain frames of N=50, **there are blue colors that only appear in target face training data but oot source face.** Does this mean that the model is trying to pull out trainnig images is had memoried, or does the mdoel trying to transform the input image into a certain trainnig data?
+    - The model seems to refine the fake face (to be more similar with target face), but its shape and color go awry. Furthermore, in certain frames of N=50, **there are blue colors that only appear in target face training data but oot source face.** Does this mean that the model is trying to pull out trainnig images is had memoried, or does the mdoel trying to transform the input image into a certain trainnig data?
   - **Version 2 result** (left to right: source, No recursion, N=50, N=150, N=500)
     - ![v2_recur](https://github.com/shaoanlu/faceswap-GAN/raw/master/gifs/v2_comb.gif)
-    - V2 model is more robust. Almost generates the same result before/after applying recursive loop.
+    - V2 model is more robust. Almost generates the same result before/after applying recursive loop except some artifacts on the bangs.
 
 ## Acknowledgments
 Code borrows from [tjwei](https://github.com/tjwei/GANotebooks), [eriklindernoren](https://github.com/eriklindernoren/Keras-GAN/blob/master/aae/adversarial_autoencoder.py), [fchollet](https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/8.5-introduction-to-gans.ipynb), [keras-contrib](https://github.com/keras-team/keras-contrib/blob/master/examples/improved_wgan.py) and [deepfakes](https://pastebin.com/hYaLNg1T). The generative network is adopted from [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
