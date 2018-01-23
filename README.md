@@ -64,7 +64,7 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
 
 ### 2. Generative Adversarial Network, GAN (version 1)
 
-**Improved output resolution:** Adversarial loss improves resolution of generated images. In addition, when perceptual loss is apllied, the movemnet of eyeballs becomes more realistic and consistent with input face.
+**Improved output quality:** Adversarial loss improves reconstruction quality of generated images. In addition, when perceptual loss is apllied, the direction of eyeballs becomes more realistic and consistent with input face.
 
 ![GAN_PL_results](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/wPL_results_resized.png)
 
