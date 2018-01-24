@@ -102,6 +102,12 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   
 **Optional 128x128 input/outptu resolution**: Increase input and output size to 128x128.
 
+### WIP: Playing aruond the "code"
+![knn_codes](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/knn_code_fit.jpg)
+  - Idea: Refine output face by adding infromation from training images that look like the input image.
+  - Similar results can be achieved by simply weighted averaging input image with images retrieved by kNNs (instead of the code).
+  - **TODO**: Implement **alphaGAN**, which integrates VAE that has a more representative latent space.
+
 ## Requirements
 
 * keras 2
