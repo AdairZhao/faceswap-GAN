@@ -16,3 +16,8 @@
   - **Version 2 result** (left to right: source, No recursion, N=50, N=150, N=500)
     - ![v2_recur](https://github.com/shaoanlu/faceswap-GAN/raw/master/gifs/v2_comb.gif)
     - V2 model is more robust. Almost generates the same result before/after applying recursive loop except some artifacts on the bangs.
+8. **Code manipulation**: 
+  - ![knn_codes](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/knn_code_fit.jpg)
+  - Idea: Refine output face by adding infromation from training images that look like the input image.
+  - Similar results can be achieved by simply weighted averaging input image with images retrieved by kNNs (instead of the code).
+  - **TODO**: Implement **alphaGAN**, which integrates VAE that has a more representative latent space.
