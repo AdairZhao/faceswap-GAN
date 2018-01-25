@@ -5,30 +5,21 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes' auto-encoder
 ### GAN-v1
 * [FaceSwap_GAN_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_github.ipynb)
 
-  1. Build a GAN model. 
-  2. Train the GAN from scratch. 
-  3. Use GAN to swap a single face image to target face.
-  4. Detect faces in an image using dlib's cnn model. 
-  5. Use GAN to transform detected face into target face. 
-  6. Use moviepy module to output a video clip with swapped face.  
+  1. Build and train a GAN model. 
+  2. Use moviepy module to output a video clip with swapped face.  
   
 ### GAN-v2
 * [FaceSwap_GAN_v2_train.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2_train.ipynb): Detailed training procedures can be found in this notebook.
-  1. Build a GAN model. 
-  2. Train the GAN from scratch. 
-  3. (Optoinal) Detect faces in an image using dlib's cnn model. 
-  4. (Optoinal) Use GAN to transform detected face into target face. 
-  5. (Optoinal) Use moviepy module to output a video clip with swapped face.
+  1. Build and train a GAN model. 
+  2. Use moviepy module to output a video clip with swapped face.
   
 * [FaceSwap_GAN_v2_test_img.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2_test_img.ipynb): Provides `swap_face()` function that require less VRAM.
   1. Load trained model.
-  2. Swap a single face image to target face.
+  2. Do single image face swapping.
   
 * [FaceSwap_GAN_v2_test_video.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2_test_video.ipynb)
   1. Load trained model.
-  2. Detect faces in an image using dlib's cnn model. 
-  3. Use GAN to transform detected face into target face. 
-  4. Use moviepy module to output a video clip with swapped face. 
+  2. Use moviepy module to output a video clip with swapped face. 
   
 * [faceswap_WGAN-GP_keras_github.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/temp/faceswap_WGAN-GP_keras_github.ipynb)
   - This notebook contains a class of GAN mdoel using [WGAN-GP](https://arxiv.org/abs/1704.00028). 
@@ -68,7 +59,7 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
 
 ![GAN_PL_results](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/wPL_results_resized.png)
 
-**VGGFace[(GitHub repo)](https://github.com/rcmalli/keras-vggface) perceptual loss (PL):** The following figure shows nuanced eyeballs direction in model output trained with/without PL. 
+**[VGGFace](https://github.com/rcmalli/keras-vggface) perceptual loss (PL):** The following figure shows nuanced eyeballs direction of output faces trained with/without PL. 
 
 ![Comp PL](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/comparison_PL_rev.png)
 
@@ -100,13 +91,7 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   - Middle: Swapped face, after masking.
   - Right: Mask heatmap & face bounding box.
   
-**Optional 128x128 input/outptu resolution**: Increase input and output size to 128x128.
-
-### WIP: Playing aruond the "code"
-![knn_codes](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/knn_code_fit.jpg)
-  - Idea: Refine output face by adding infromation from training images that look like the input image.
-  - Similar results can be achieved by simply weighted averaging input image with images retrieved by kNNs (instead of the code).
-  - **TODO**: Implement **alphaGAN**, which integrates VAE that has a more representative latent space.
+**Optional 128x128 input/output resolution**: Increase input and output size to 128x128.
 
 ## Requirements
 
