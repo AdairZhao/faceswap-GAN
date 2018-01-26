@@ -95,9 +95,9 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
 
 ## Frequently asked questions
 
-1. Video making is slow / OOM error?
-  - It is likely due to too large input size of video, try to   
-  **reduce input image size**
+#### 1. Video making is slow / OOM error?
+  - It is likely due to too large resolution of input video, try to   
+  **reduce input size**
     ```python
     def porcess_video(input_img):
       # Reszie to 1/2x width and height.
@@ -113,10 +113,8 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
       #faces = face_recognition.face_locations(image, model="cnn") # Use CNN model
       faces = face_recognition.face_locations(image) # Use default Haar features.  
     ```
-2. How does it work?
-  - The following illustration shows a very high-level and abstract (but not exactly the same) flowchart of the deniosing autoencoder algorithm.
-
-  ![arch3](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/faceswap_GAN_arch3.jpg)
+#### 2. How does it work?
+  - [This illustration](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/faceswap_GAN_arch3.jpg) shows a very high-level and abstract (but not exactly the same) flowchart of the denoising autoencoder algorithm.
 
 ## Requirements
 
