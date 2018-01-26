@@ -93,6 +93,11 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   
 **Optional 128x128 input/output resolution**: Increase input and output size to 128x128.
 
+## How it work
+The following illustration shows a very high-level (but not exactly the same) flowchart of the deniosing autoencoder algorithm.
+
+![arch3](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/faceswap_GAN_arch3.jpg)
+
 ## Requirements
 
 * keras 2
