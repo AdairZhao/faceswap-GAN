@@ -93,10 +93,30 @@ Autoencoder based on deepfakes' script. It should be mentoined that the result o
   
 **Optional 128x128 input/output resolution**: Increase input and output size to 128x128.
 
-## How it work
-The following illustration shows a very high-level (but not exactly the same) flowchart of the deniosing autoencoder algorithm.
+## Frequently asked questions
 
-![arch3](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/faceswap_GAN_arch3.jpg)
+1. Video making is slow / OOM error?
+  - It is likely due to too large input size of video, try to   
+  **reduce input image size**
+    ```python
+    def porcess_video(input_img):
+      # Reszie to 1/2x width and height.
+      input_img = cv2.resize(input_img, (input_img.shape[1]//2, input_img.shape[0]//2))
+      image = input_image
+      ...
+    ``` 
+    or
+  **disable CNN model for face detectoin**
+    ```python
+    def process_video(...):
+      ...
+      #faces = face_recognition.face_locations(image, model="cnn") # Use CNN model
+      faces = face_recognition.face_locations(image) # Use default Haar features.  
+    ```
+2. How does it work?
+  - The following illustration shows a very high-level and abstract (but not exactly the same) flowchart of the deniosing autoencoder algorithm.
+
+  ![arch3](https://github.com/shaoanlu/faceswap-GAN/raw/master/readme_imgs/faceswap_GAN_arch3.jpg)
 
 ## Requirements
 
